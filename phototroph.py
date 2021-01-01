@@ -1,15 +1,12 @@
 import pygame as pg
 import numpy as np
-from pygame.sprite import Sprite
+from cell import Cell
 from settings import Settings
 
 
-class Cell(Sprite):
-    def __init__(self, settings, display, velosity):
-        super().__init__()
-        self.disp = display
-        self.settings = settings
-        self.x, self.y = self.disp.get_rect().center
+class Сhemotroph(Cell):
+    def __init__(self, settings, display, rect, velosity):
+        super().__init__(settings, display, rect)
         self.v = velosity
 
     def update(self):
